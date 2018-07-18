@@ -1,0 +1,23 @@
+<div class="body-container col-xs-12">
+  <div class="form-container container">
+    <div class="form col-xs-10 col-xs-offset-1 offset-md-3 col-md-6 col-lg-4 offset-lg-4 ">
+      <%= image_tag 'logo-banner.png' %>
+      <div class="login-lead">Cambiar contraseña</div>
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+        <%= devise_error_messages! %>
+        <%= f.hidden_field :reset_password_token %>
+        <div class="form-group">
+          <label class="form-label float-left">Nueva contraseña</label>
+          <%= f.password_field :password, autofocus: true, autocomplete: "off", class: 'form-control' %>
+        </div>
+        <div class="actions">
+          <%= f.submit "Cambiar contraseña", class: 'login-btn btn-primary mt-5' %>
+        </div>
+      <% end %>
+      <div class="mt-5">
+        <%= render "devise/shared/links" %>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

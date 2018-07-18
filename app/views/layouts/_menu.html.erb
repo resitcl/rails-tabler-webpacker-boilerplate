@@ -1,0 +1,15 @@
+<div class="header collapse d-lg-flex p-0" id="headerMenuCollapse">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg order-lg-first">
+        <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
+          <li class="nav-item">
+            <%= link_to root_path, {class: "nav-link nav-link-atempo #{current_page?(root_path) ? 'active': ''}" } do -%>
+              <i class="fe fe-grid"></i>Home
+            <% end-%>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

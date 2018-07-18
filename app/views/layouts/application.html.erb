@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Plataforma genérica</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js" data-turbolinks-track="reload"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js" data-turbolinks-track="reload"></script>
+    <meta name="viewport" content="width=device-width">
+  </head>
+
+  <body>
+    <% if current_user %>
+    <div class="page">
+      <div class="page-main">
+        <%= render 'layouts/header' %>
+        <%= render 'layouts/menu' %>
+        <% if (notice || alert) %>
+          <div class="container mt-3">
+            <% unless notice.blank? %>
+            <p class="alert alert-success notice"><%= notice %></p>
+            <% end %>
+            <% unless alert.blank? %>
+              <p class="alert alert-danger"><%= alert %></p>
+            <% end %>
+          </div>
+        <% end %>
+        <%= yield %>
+        </div>
+      <%= render 'layouts/footer' %>
+    </div>
+    <% else %>
+      <%= yield %>
+    <% end %>
+  </body>
+</html>

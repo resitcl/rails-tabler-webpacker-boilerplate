@@ -1,0 +1,33 @@
+<div class="body-container">
+  <div class="form login-form col-xs-10 col-xs-offset-1 offset-md-6 col-md-6 col-lg-4 offset-lg-8">
+    <%= image_tag 'logo-banner.png', class: 'img-login' %>
+    <div class="login-lead">App genérica ResIT</div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="form-group">
+      <label class="form-label float-left">Email</label>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Ingrese su email', class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <label class="form-label float-left">Contraseña</label>
+      <%= f.password_field :password, autocomplete: "off", placeholder: 'Ingrese su contraseña', class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <% if devise_mapping.rememberable? -%>
+        <div class="field float-left">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me, "Recordarme" %>
+        </div>
+        <div class="clearfix"/>
+      <% end -%>
+      <div class="actions">
+        <%= f.submit "Iniciar sesión", class: 'login-btn btn-primary mt-5' %>
+      </div>
+    <% end %>
+    </div>
+    <div class="mt-5">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>

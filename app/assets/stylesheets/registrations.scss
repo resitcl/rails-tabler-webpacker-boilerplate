@@ -1,0 +1,50 @@
+.body-container {
+  text-align: center;
+  height: 100%;
+  background-position: 100% 100%; 
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-image: image-url("ic_main_back.png");
+}
+
+.form-container {
+  min-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: auto;
+  background: white;
+  margin: auto;
+  background: transparent;
+  @media(max-width: 768px) {
+    min-height: calc(100vh - 20px);
+  }
+}
+
+.form {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  background: white;
+}
+
+.login-lead {
+  margin-bottom: 20px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.login-btn {
+  width: 100%;
+  color: white;
+  background-color: #0DBCB7;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.login-form {
+  height: 100% !important;
+}
+
+.img-login {
+  width: 70%;
+}

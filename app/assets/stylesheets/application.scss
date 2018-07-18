@@ -1,0 +1,112 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require select2-bootstrap
+ *= require datatables
+ */
+ 
+@import "custom_tabler_variables";
+@import "bootstrap";
+@import "tabler";
+@import "tabler.plugins";
+@import "font-awesome";
+
+.muc-response-box {
+  background-color: #9aa0ac8f;
+  color: white;
+}
+
+.big-number {
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.img-header {
+  width: 50px;
+}
+
+.nav-tabs {
+  .nav-link-atempo {
+    &.active {
+      border-color: $primary;
+      color: $primary;
+      background: transparent;
+    }
+  }
+}
+
+.sub-title {
+  color: #9aa0ac;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.margin-auto {
+  display: block;
+  margin: auto;
+}
+
+.concept-separator {
+  color: #9aa0ac;
+  width: 300px;
+  border-top: 1px dashed #9aa0ac;
+  margin: 20px 30px;
+}
+
+.pairs-container .concept-separator {
+  white-space: nowrap;
+}
+
+.btn {
+  border-radius: 20px;
+  padding: 0.2rem 1.2rem;
+  background-color: #e61b52;
+  color: white !important;
+}
+
+.btn-save,
+.btn-save:hover,
+.btn-save:active,
+.btn-save:visited,
+.btn-save:focus {
+  background-color: #8DC63F;
+  border-color: #8DC63F;
+}
+
+.red {
+  color: #e61b52;
+}
+
+.green {
+  color: $mp00;
+}
+
+.btn-logout {
+  font-size: 12px;
+  font-weight: 600;
+  color: #e61b52 !important;
+}
+
+.edit-icon {
+  color: #42C0B9;
+}
+
+.trash-icon {
+  color: #E9004B;
+}

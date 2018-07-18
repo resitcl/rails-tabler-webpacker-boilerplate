@@ -1,0 +1,43 @@
+version: '3'
+services:
+  agunsaocs_app-db:
+    image: postgres
+    environment:
+      POSTGRES_DB: agunsaocs_production
+      POSTGRES_USER: agunsaocs_user
+      POSTGRES_PASSWORD: ahnsuiodioshafuaisdosh
+    volumes:
+      -  /opt/volumes/agunsa-ocs-backup:/var/lib/postgresql/data
+    logging:
+        driver: "awslogs"
+        options:
+           awslogs-region: "sa-east-1"
+           awslogs-group: "resit2-docker-logs"
+           awslogs-stream: "agunsaocs-app-db"
+  agunsaocs_app-web:
+    build: .
+    command: /bin/sh init.sh
+    ports:
+      - "8575:3000"
+    depends_on:
+      - agunsaocs_app-db
+    logging:
+        driver: "awslogs"
+        options:
+           awslogs-region: "sa-east-1"
+           awslogs-group: "resit2-docker-logs"
+           awslogs-stream: "agunsaocs-app-web"
+  redis:
+    image: 'redis'
+    command: redis-server --port 6379 --appendonly yes
+    ports:
+      - '6379:6379'
+  sidekiq:
+    depends_on:
+      - redis
+    build: .
+    links:
+      - redis
+    command: bundle exec sidekiq -C config/sidekiq.yml -e production
+volumes:
+  agunsaocs_app-db:

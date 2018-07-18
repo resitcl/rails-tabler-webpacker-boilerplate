@@ -1,0 +1,39 @@
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <h4>No fue posible guardar este usuario:</h4>
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <div class="form-group">
+      <%= form.label 'Email', class: 'form-label' %>
+      <%= form.text_field :email, id: :user_email, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="form-group">
+      <%= form.label 'Contraseña', class: 'form-label' %>
+      <%= form.text_field :password, id: :user_password, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="form-group">
+      <%= form.label 'Confirmación de contraseña', class: 'form-label' %>
+      <%= form.text_field :password_confirmation, id: :user_password_confirmation, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <div class="col-xs-12 pl-0 pr-0">
+      <%= form.submit 'Guardar', class: 'btn btn-save float-right' %>
+    </div>
+  </div>
+<% end %>

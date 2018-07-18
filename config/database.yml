@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  timeout: 5000
+  username: postgres
+
+development:
+  <<: *default
+  database: agunsaocs_dev
+
+test:
+  <<: *default
+  database: agunsaocs_test
+
+production:
+  adapter: postgresql
+  database: agunsaocs_production
+  pool: 5
+  host: agunsaocs_app-db
+  username: agunsaocs_user
+  password: ahnsuiodioshafuaisdosh

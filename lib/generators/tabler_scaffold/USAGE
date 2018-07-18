@@ -1,0 +1,8 @@
+Description:
+    Generate usual scaffold views with Tabler tempalte
+
+Example:
+    rails generate tabler_scaffold User name email password...
+
+    This will create:
+        app/views/users/[index, _form, edit, new, show].html.erb

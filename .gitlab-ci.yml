@@ -1,0 +1,21 @@
+before_script:
+  - docker info
+  
+stages:
+  - build
+  - deploy
+
+build_image:
+  only:
+    - master
+  stage: build
+  script:
+    - docker-compose down
+    - docker-compose build
+
+run_image:
+  only:
+    - master
+  stage: deploy
+  script:
+    - docker-compose up -d
