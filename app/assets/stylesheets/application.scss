@@ -22,9 +22,10 @@
 @import "tabler.plugins";
 @import "font-awesome";
 
-.muc-response-box {
-  background-color: #9aa0ac8f;
-  color: white;
+.field_with_errors .form-control {
+  padding: 2px;
+  border-color: red;
+  display: table;
 }
 
 .big-number {
