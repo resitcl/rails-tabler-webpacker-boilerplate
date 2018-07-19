@@ -25,9 +25,17 @@
                   <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
                   <% end -%>
                   <td>
-                    <%%= link_to 'Show', <%= singular_table_name %> %> |
-                    <%%= link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>) %> |
-                    <%%= link_to 'Destroy', <%= singular_table_name %>, method: :delete, data: { confirm: 'Are you sure?' } %>
+                    <%%= link_to client do %>
+                      <i class="fa fa-eye edit-icon"></i>
+                    <%% end %>
+                    &nbsp;
+                    <%%= link_to edit_client_path(client) do %>
+                      <i class="fa fa-edit edit-icon"></i>
+                    <%% end %>
+                    &nbsp;
+                    <%%= link_to client, method: :delete, data: { confirm: 'Estás seguro?' } do %>
+                      <i class="fa fa-trash trash-icon"></i>
+                    <%% end %>
                   </td>
                 </tr>
                 <%% end %>
