@@ -39,5 +39,31 @@
   </div>
 </div>
 <%%= javascript_tag defer: 'defer' do %>
-  $("#datatable-<%= singular_table_name %>").dataTable();
+  var dataTable = $("#datatable-<%= singular_table_name %>").dataTable({
+    "bPaginate": true,
+    "bLengthChange": false,
+    "bFilter": true,
+    "bInfo": false,
+    "bAutoWidth": false,
+    "dom": '<"top"i>rt<"bottom"pf><"clear">',
+    "language": {
+          "sZeroRecords":    "No se encontraron resultados",
+          "sEmptyTable":     "Ningún dato disponible en esta tabla",
+          "searchPlaceholder": "Buscar preguntas...",
+          "sSearch":         "",
+          "oPaginate": {
+            "sFirst":    "Primero",
+            "sLast":     "Último",
+            "sNext":     "Siguiente",
+            "sPrevious": "Anterior"
+          }
+      }
+  });
+
+  document.addEventListener("turbolinks:before-cache", function() {
+    if (dataTable !== null) {
+     dataTable.destroy();
+     dataTable = null;
+    }
+  });
 <%% end %>
