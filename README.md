@@ -3,8 +3,9 @@
 Boilerplate de Rails + Devise + Sidekiq/Redis _dockerizado_ y basado en el template [Tabler](https://tabler.github.io/tabler/).
 
 Además, implementa un _scaffold_ únicamente de vistas en la carpeta `lib`. Se utiliza igual que el _scaffold_ normal de Rails y genera formularios basados en Tabler y tablas con DataTables ya implementado. Por ejemplo:
-
-`rails g tabler_scaffold Order user:references client:references name due_date`
+`
+rails g tabler_scaffold Order user:references client:references name due_date
+`
 
 ### Archivos que modificar:
 - `application.rb` nombre de la aplicación
