@@ -12,6 +12,8 @@
 //
 //= require jquery3
 //= require rails-ujs
+//= require popper
+//= require bootstrap
 //= require turbolinks
 //= require tabler
 //= require tabler.plugins
