@@ -16,4 +16,8 @@
 //= require tabler
 //= require tabler.plugins
 //= require select2
+//= require datatables.net/js/jquery.dataTables.min.js
+//= require datatables.net-bs4/js/dataTables.bootstrap4.min.js
+//= require datatables.net-select/js/dataTables.select.min.js
+//= require datatables.net-select-bs4/js/select.bootstrap4.min.js
 //= require_tree .
