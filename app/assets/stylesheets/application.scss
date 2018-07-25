@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  *= require select2-bootstrap
+ *= require datatables.net-bs4/css/dataTables.bootstrap4.min.css
+ *= require datatables.net-select-bs4/css/select.bootstrap4.min.css
  *= require datatables
  */
  
