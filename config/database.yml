@@ -6,16 +6,16 @@ default: &default
 
 development:
   <<: *default
-  database: agunsaocs_dev
+  database: resit_boilerplate_dev
 
 test:
   <<: *default
-  database: agunsaocs_test
+  database: db
 
 production:
   adapter: postgresql
-  database: agunsaocs_production
+  database: resit_boilerplate_production
   pool: 5
-  host: agunsaocs_app-db
-  username: agunsaocs_user
-  password: ahnsuiodioshafuaisdosh
+  host: resit_boilerplate_app-db
+  username: resit_boilerplate_user
+  password: password
