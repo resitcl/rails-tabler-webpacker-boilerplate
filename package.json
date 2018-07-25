@@ -2,5 +2,7 @@
   "name": "agunsaocs",
   "private": true,
   "dependencies": {
+     "datatables.net-bs4": "^1.10.19",
+    "datatables.net-select-bs4": "^1.2.7"
   }
 }
