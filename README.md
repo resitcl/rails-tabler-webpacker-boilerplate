@@ -8,7 +8,7 @@ rails g tabler_scaffold Order user:references client:references name due_date
 ```
 
 ### Archivos que modificar:
-- `application.rb` nombre de la aplicación
+- `application.rb` y `application.html.rb` nombre de la aplicación
 - `database.yml`: configuración DB
 - `docker-compose.yml`: nombre de la aplicación, puertos y credenciales Postgres
 - `package.json`: detalles de la aplicación
