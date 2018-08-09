@@ -21,3 +21,5 @@ rails g tabler_scaffold Order user:references client:references name due_date
 
 ### Comandos que correr
 - `bundle exec rake secret` y reemplazar los _hash_ en `secrets.yml`
+- `rake db:create && rake db:seed`
+- `npm install`
