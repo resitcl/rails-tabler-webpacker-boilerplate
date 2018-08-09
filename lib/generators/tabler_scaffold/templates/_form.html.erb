@@ -10,26 +10,21 @@
       </ul>
     </div>
   <%% end %>
-
+<div class="row">
 <% attributes.each do |attribute| -%>
-  <div class="field">
-<% if attribute.password_digest? -%>
-    <%%= form.label :password %>
-    <%%= form.password_field :password, id: :<%= field_id(:password) %> %>
-  </div>
-
-  <div class="field col-xs-12 col-sm-6 col-md-4 pl-0 pr-0">
-    <%%= form.label :password_confirmation %>
-    <%%= form.password_field :password_confirmation, id: :<%= field_id(:password_confirmation) %> %>
-<% else -%>
-    <div class="form-group">
+  <% if attribute.type.to_s == 'references' -%>
+    <div class="form-group col-xs-12 col-sm-6">
+      <%%= form.label :<%= attribute.column_name %>, class: 'form-label' %>
+      <%%= form.select('<%= attribute.column_name %>', options_from_collection_for_select(<%= attribute.name.titleize %>.all, 'id', 'name'), {include_blank: 'Select <%= attribute.name %>'}, { class: 'form-control custom-select' }) %>
+    </div>
+  <% else -%>
+    <div class="form-group col-xs-12 col-sm-6">
       <%%= form.label :<%= attribute.column_name %>, class: 'form-label' %>
       <%%= form.<%= attribute.field_type %> :<%= attribute.column_name %>, id: :<%= field_id(attribute.column_name) %>, class: 'form-control' %>
     </div>
+  <% end -%>
 <% end -%>
-  </div>
-
-<% end -%>
+</div>
   <div class="actions">
     <div class="col-xs-12 col-sm-6 col-md-4 pl-0 pr-0 mt-5 float-right">
       <%%= form.submit 'Save', class: 'btn btn-primary btn-block' %>
