@@ -12,11 +12,11 @@
 //
 //= require jquery3
 //= require rails-ujs
-//= require popper
-//= require bootstrap
 //= require turbolinks
 //= require tabler
 //= require tabler.plugins
+//= require popper
+//= require bootstrap
 //= require select2
 //= require datatables.net/js/jquery.dataTables.min.js
 //= require datatables.net-bs4/js/dataTables.bootstrap4.min.js
