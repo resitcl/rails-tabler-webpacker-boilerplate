@@ -4,7 +4,7 @@ rm -rf /usr/src/app/tmp/pids/server.pid
 
 RAILS_ENV=production bundle install
 #DISABLE_DATABASE_ENVIRONMENT_CHECK=1 RAILS_ENV=production bundle exec rake db:drop
-#RAILS_ENV=production bundle exec rake db:create
+RAILS_ENV=production bundle exec rake db:create
 RAILS_ENV=production bundle exec rake db:migrate
 #RAILS_ENV=production rake assets:precompile
 #RAILS_ENV=production rake assets:clean

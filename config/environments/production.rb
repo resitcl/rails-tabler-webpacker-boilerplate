@@ -62,12 +62,12 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "e-learning_#{Rails.env}"
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.default_url_options = { host: 'agunsaocs.resit.cl' }
+  config.action_mailer.default_url_options = { host: 'mydomain.cl' }
   config.action_mailer.smtp_settings = {
-    address: ENV['AWS_SES_ADDR'],
+    address: ENV['ADDR'],
     port: 587,
-    user_name: ENV['AWS_SES_USER'],
-    password: ENV['AWS_SES_PASS'],
+    user_name: ENV['USER'],
+    password: ENV['PASS'],
     authentication: :login,
     enable_starttls_auto: true
   }
