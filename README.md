@@ -1,7 +1,7 @@
 # ResIT Rails + Devise + Sidekiq Boilerplate
 
 ### Español
-Boilerplate de Rails + Devise + Sidekiq/Redis _dockerizado_ y basado en el template [Tabler](https://tabler.github.io/tabler/).
+Boilerplate de Rails + Devise + Sidekiq _dockerizado_ y basado en el template [Tabler](https://tabler.github.io/tabler/).
 
 Además, implementa un _scaffold_ únicamente de vistas en la carpeta `lib`. Se utiliza igual que el _scaffold_ normal de Rails y genera formularios basados en Tabler y tablas con DataTables ya implementado. Por ejemplo:
 ```
@@ -25,7 +25,7 @@ rails g tabler_scaffold Order user:references client:references name due_date
 - `rake db:create && rake db:seed`
 - `npm install`
 
-### Inglés
+### English
 Rails + Devise + Sidekiq dockerized boilerplate based on [Tabler](https://tabler.github.io/tabler/) template.
 
 It also implements a _Tabler ready_ views scaffold placed on `lib` folder. It's used the same way usual scaffold is used and it generates forms based on Tabler forms, including DataTable's ready tables and combo boxes with `references` fields. For example:
