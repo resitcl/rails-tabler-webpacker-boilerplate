@@ -3,6 +3,8 @@
 ### Español
 Boilerplate de Rails + Devise + Sidekiq + Webpacker _dockerizado_ y basado en el template [Tabler](https://tabler.github.io/tabler/).
 
+Fork de https://github.com/resitcl/rails-tabler-boilerplate
+
 Implementa dos _scaffold_ en la carpeta `lib`. Se utilizan igual que el _scaffold_ normal de Rails:
 
 * Este genera formularios basados en Tabler y tablas con DataTables ya implementado. Por ejemplo:
@@ -37,6 +39,8 @@ Implementa dos _scaffold_ en la carpeta `lib`. Se utilizan igual que el _scaffol
 
 ### English
 Rails + Devise + Sidekiq + Webpacker _dockerized_ boilerplate based on [Tabler](https://tabler.github.io/tabler/) template.
+
+Fork of https://github.com/resitcl/rails-tabler-boilerplate
 
 Implement tow _scaffold_ place on `lib` folder. They are used just like the normal Rails _scaffold_:
 
