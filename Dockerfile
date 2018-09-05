@@ -6,7 +6,6 @@ ADD Gemfile /usr/src/app/Gemfile
 ADD Gemfile.lock /usr/src/app/Gemfile.lock
 RUN RAILS_ENV=production bundle install
 ADD . /usr/src/app/
-RUN npm install
 RUN RAILS_ENV=production bundle exec rake assets:precompile --trace
 RUN RAILS_ENV=production bundle exec rake secret
 EXPOSE 3000
