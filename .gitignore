@@ -23,3 +23,8 @@
 .byebug_history
 
 /public/*
+/.idea/
+/public/packs-test
+/node_modules
+yarn-debug.log*
+.yarn-integrity

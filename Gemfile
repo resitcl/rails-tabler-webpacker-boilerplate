@@ -22,22 +22,13 @@ gem 'uglifier', '>= 1.3.0'
 # Authentication
 gem 'devise'
 
-# select2
-gem 'select2-rails', '~> 4.0', '>= 4.0.1'
-
 # i18n
 gem 'rails-i18n', '~> 5.1'
 
 # JQuery
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
-
-# Fontawesome
-gem 'font-awesome-rails'
 
 # Tabler
-gem 'bootstrap', '~> 4.1.1'
-gem 'tabler-rubygem'
+# gem 'tabler-rubygem'
 
 # jobs
 gem 'sidekiq'
@@ -55,6 +46,10 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'pry'
+
+# Webpack
+gem 'webpacker', '~> 3.0'
+gem 'webpacker', '~> 3.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

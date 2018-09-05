@@ -9,33 +9,26 @@
           <div class="card-header">
             <h3 class="card-title">Usuarios</h3>
           </div>
-          <table class="table table-hover table-outline table-vcenter text-nowrap card-table" 
-                 id="datatable-user">
-            <thead>
-              <tr>
-                <th>Email</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <% @users.each do |user| %>
-              <tr>
-                <td><%= user.email %></td>
-                <td>
-                  <%= link_to user, method: :delete, data: { confirm: '¿Estás seguro?' } do %>
-                    <i class="fa fa-trash trash-icon"></i>
-                  <% end %>
-                </td>
-              </tr>
-              <% end %>
-            </tbody>
-          </table>
+          <div class="card-body">
+          <%= render 'components/table/table', table:{
+              id: 'datatable-user',
+              data: @users,
+              config: {},
+              action:{
+                title: 'Actions',
+                actions: %i[delete]
+              },
+              columns: [
+                {
+                  title: 'Email',
+                  data: 'email',
+                },
+              ],
+          } %>
+          </div>
         </div>
         <%= link_to 'Nuevo usuario', new_user_path, class: 'btn btn-primary' %>
       </div>
     </div>
   </div>
 </div>
-<%= javascript_tag defer: 'defer' do %>
-
-<% end %>

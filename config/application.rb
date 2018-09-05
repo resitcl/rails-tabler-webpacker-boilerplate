@@ -6,7 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module AgunsaOCS
+module ResitBoilerPlate
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
@@ -18,6 +18,13 @@ module AgunsaOCS
     config.active_job.queue_adapter = :sidekiq
     config.i18n.default_locale = :'es'
     config.generators.javascript_engine = :js
+
+    config.generators do |g|
+      g.stylesheets     false
+      g.javascripts     false
+      g.helper          false
+      g.channel         assets: false
+    end
   end
 end
 
@@ -25,6 +32,6 @@ class String
   def to_bool
     return true if self == true   || self =~ /(true|t|yes|y|1)$/i
     return false if self == false  || self.blank? || self =~ /(false|f|no|n|0)$/i
-    raise ArgumentError.new("invalid value for Boolean: \"#{self}\"")
+    raise ArgumentError, "invalid value for Boolean: \"#{self}\""
   end
 end

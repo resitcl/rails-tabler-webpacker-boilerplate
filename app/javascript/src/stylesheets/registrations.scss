@@ -1,10 +1,10 @@
 .body-container {
   text-align: center;
   height: 100%;
-  background-position: 100% 100%; 
-  background-repeat: no-repeat; 
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
   background-size: cover;
-  background-image: image-url("ic_main_back.png");
+  background-image: url("../images/ic_main_back.png");
 }
 
 .form-container {
@@ -15,7 +15,6 @@
   overflow: auto;
   background: white;
   margin: auto;
-  background: transparent;
   @media(max-width: 768px) {
     min-height: calc(100vh - 20px);
   }

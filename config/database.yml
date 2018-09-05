@@ -3,6 +3,10 @@ default: &default
   encoding: unicode
   timeout: 5000
   username: postgres
+  username: postgres
+  password: 1234
+  host: 172.17.0.1
+  port: 5437
 
 development:
   <<: *default
@@ -10,7 +14,7 @@ development:
 
 test:
   <<: *default
-  database: db
+  database: resit_boilerplate_test
 
 production:
   adapter: postgresql

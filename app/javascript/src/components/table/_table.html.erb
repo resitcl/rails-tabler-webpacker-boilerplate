@@ -1,0 +1,56 @@
+<%
+  data_key = []
+  action_title = ''
+  actions = []
+  if table[:action].present?
+    action_title = table[:action][:title] || ''
+    actions = table[:action][:actions] || []
+  end
+%>
+<table
+  id="<%=table[:id]%>"
+  class="table table-hover table-outline table-vcenter text-nowrap card-table"
+  data-config="<%=table[:config]%>">
+  <thead>
+    <%=
+      content_tag :tr do
+        table[:columns].each do |column|
+          data_key << column[:data]
+          concat content_tag(:th, column[:title])
+        end
+        concat content_tag(:th, action_title, { class: 'text-center' } ) unless action_title.blank?
+      end
+    %>
+  </thead>
+  <tbody>
+    <% table[:data].each do |data| %>
+    <%=
+      content_tag :tr do
+        data_key.each do |key|
+          concat content_tag(:td, data[key])
+        end
+        if actions.any?
+          concat(content_tag :td, { class: 'text-center' } {
+            action = ''
+            if actions.include? :show
+              action.concat content_tag :span, 'show'
+            end
+            if actions.include? :update
+              action.concat content_tag :span, 'update'
+            end
+            if actions.include? :delete
+              action.concat link_to data, method: :delete, data: { confirm: '¿Estás seguro?' } {
+                content_tag :i, '', class: 'fe fe-trash trash-icon'
+              }
+            end
+            action.html_safe
+          })
+        end
+      end
+    %>
+    <% end %>
+  </tbody>
+</table>
+<%= javascript_tag defer: 'defer' do %>
+  window.initializeTable('<%=table[:id]%>', JSON.parse('<%= table[:config].to_json.html_safe %>'));
+<% end %>
