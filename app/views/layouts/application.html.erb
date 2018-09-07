@@ -12,8 +12,8 @@
     <% if current_user %>
     <div class="page">
       <div class="page-main">
-        <%= render 'components/header/header' %>
-        <%= render 'components/menu/menu' %>
+        <%= render 'layouts/header' %>
+        <%= render 'layouts/menu' %>
         <% if (notice || alert) %>
           <div class="container mt-3">
             <% unless notice.blank? %>
@@ -26,7 +26,7 @@
         <% end %>
         <%= yield %>
         </div>
-      <%= render 'components/footer/footer' %>
+      <%= render 'layouts/footer' %>
     </div>
     <% else %>
       <%= yield %>

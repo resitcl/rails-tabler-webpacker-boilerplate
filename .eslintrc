@@ -18,7 +18,7 @@
       "webpack": {
         "config": {
           "resolve": {
-            "modules": ["javascript", "node_modules"]
+            "modules": ["app/javascript", "node_modules"]
           }
         }
       }

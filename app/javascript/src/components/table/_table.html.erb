@@ -8,35 +8,39 @@
   end
 %>
 <table
-  id="<%=table[:id]%>"
-  class="table table-hover table-outline table-vcenter text-nowrap card-table"
-  data-config="<%=table[:config]%>">
+id="<%=table[:id]%>"
+class="table table-hover table-outline table-vcenter text-nowrap card-table"
+data-config="<%=table[:config]%>">
   <thead>
-    <%=
-      content_tag :tr do
-        table[:columns].each do |column|
-          data_key << column[:data]
-          concat content_tag(:th, column[:title])
-        end
-        concat content_tag(:th, action_title, { class: 'text-center' } ) unless action_title.blank?
+  <%=
+    content_tag :tr do
+      table[:columns].reject{ |a| a[:title].casecmp('password').zero?}.each do |column|
+        data_key << column[:data]
+        concat content_tag(:th, column[:title])
       end
-    %>
+      concat content_tag(:th, action_title, { class: 'text-center' } ) unless action_title.blank?
+    end
+  %>
   </thead>
   <tbody>
-    <% table[:data].each do |data| %>
+  <% table[:data].each do |data| %>
     <%=
       content_tag :tr do
         data_key.each do |key|
           concat content_tag(:td, data[key])
         end
         if actions.any?
-          concat(content_tag :td, { class: 'text-center' } {
+          concat(content_tag :td, { class: 'd-flex justify-content-center' } {
             action = ''
             if actions.include? :show
-              action.concat content_tag :span, 'show'
+              action.concat link_to data, {class: 'pr-1'} {
+                content_tag :i, '', class: 'fe fe-eye edit-icon'
+              }
             end
             if actions.include? :update
-              action.concat content_tag :span, 'update'
+              action.concat link_to send("edit_#{data.model_name.singular_route_key}_path",data), {class: 'pr-1'} {
+                content_tag :i, '', class: 'fe fe-edit edit-icon'
+              }
             end
             if actions.include? :delete
               action.concat link_to data, method: :delete, data: { confirm: '¿Estás seguro?' } {
@@ -48,7 +52,7 @@
         end
       end
     %>
-    <% end %>
+  <% end %>
   </tbody>
 </table>
 <%= javascript_tag defer: 'defer' do %>
