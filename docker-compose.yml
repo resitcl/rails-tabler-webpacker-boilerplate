@@ -1,7 +1,7 @@
 version: '3'
 services:
   resit-boilerplate-app-db:
-    image: postgres
+    image: postgres:10.1-alpine
     environment:
       POSTGRES_DB: db
       POSTGRES_USER: user
