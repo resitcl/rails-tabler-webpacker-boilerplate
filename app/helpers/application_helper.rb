@@ -1,8 +1,5 @@
 module ApplicationHelper
-  def malls_select_options
-    ['Los Domínicos', 'Oeste', 'Egaña']
-  end
-
+  
   def concept_union_ticket(answer)
     return '<i class="fa fa-check green"></i>' if answer.convert_to(:answer).correct
     '<i class="fa fa-times red"></i>'
