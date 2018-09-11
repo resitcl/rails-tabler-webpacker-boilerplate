@@ -7,7 +7,7 @@
             <h3 class="card-title"><%= plural_table_name.titleize %></h3>
           </div>
           <div class="card-body">
-            <%%= render 'components/table/table', table:{
+            <%%= render 'components/table/table', props:{
             id: 'datatable-<%= singular_table_name %>',
             data: @<%= plural_table_name %>,
             config: {},

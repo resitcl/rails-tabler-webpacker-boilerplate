@@ -2,19 +2,19 @@
   data_key = []
   action_title = ''
   actions = []
-  if table[:action].present?
-    action_title = table[:action][:title] || ''
-    actions = table[:action][:actions] || []
+  if props[:action].present?
+    action_title = props[:action][:title] || ''
+    actions = props[:action][:actions] || []
   end
 %>
 <table
-id="<%=table[:id]%>"
+id="<%=props[:id]%>"
 class="table table-hover table-outline table-vcenter text-nowrap card-table"
-data-config="<%=table[:config]%>">
+data-config="<%=props[:config]%>">
   <thead>
   <%=
     content_tag :tr do
-      table[:columns].reject{ |a| a[:title].casecmp('password').zero?}.each do |column|
+      props[:columns].reject{ |a| a[:title].casecmp('password').zero?}.each do |column|
         data_key << column[:data]
         concat content_tag(:th, column[:title])
       end
@@ -23,7 +23,7 @@ data-config="<%=table[:config]%>">
   %>
   </thead>
   <tbody>
-  <% table[:data].each do |data| %>
+  <% props[:data].each do |data| %>
     <%=
       content_tag :tr do
         data_key.each do |key|
@@ -56,5 +56,5 @@ data-config="<%=table[:config]%>">
   </tbody>
 </table>
 <%= javascript_tag defer: 'defer' do %>
-  window.initializeTable('<%=table[:id]%>', JSON.parse('<%= table[:config].to_json.html_safe %>'));
+  window.initializeTable('<%=props[:id]%>', JSON.parse('<%= props[:config].to_json.html_safe %>'));
 <% end %>
