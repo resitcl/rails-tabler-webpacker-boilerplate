@@ -1,8 +1,7 @@
 <%%= form_with(model: <%= singular_table_name %>, local: true) do |form| %>
   <%% if <%= singular_table_name %>.errors.any? %>
     <div class="alert alert-danger" role="alert">
-      <h4><%%= pluralize(<%= singular_table_name %>.errors.count, "error") %> prohibited this <%= singular_table_name %> from being saved:</h4>
-
+	<h4><%%= t('errors.template.header', :model => <%= singular_table_name %>.model_name.human, :count => <%= singular_table_name %>.errors.count) %></h4>
       <ul>
       <%% <%= singular_table_name %>.errors.full_messages.each do |message| %>
         <li><%%= message %></li>
