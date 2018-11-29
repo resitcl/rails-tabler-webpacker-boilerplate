@@ -1,5 +1,7 @@
 # ResIT Rails + Devise + Sidekiq + Webpacker Boilerplate
 
+[![Code Climate](https://codeclimate.com/github/resitcl/rails-tabler-webpacker-boilerplate.png)](https://codeclimate.com/github/resitcl/rails-tabler-webpacker-boilerplate)
+
 ### Español
 Boilerplate de Rails + Devise + Sidekiq + Webpacker _dockerizado_ y basado en el template [Tabler](https://tabler.github.io/tabler/).
 
