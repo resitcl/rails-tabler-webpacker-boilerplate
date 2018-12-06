@@ -14,7 +14,7 @@ class ComponentJsGenerator < Rails::Generators::Base
       # require component's CSS inside JS automatically
       "import './#{component_name}.css';\n"
     end
-    append_to_file 'app/javascript/components/index.js' do
+    append_to_file 'app/javascript/src/components/index.js' do
       "import './#{component_name}/#{component_name}';\n"
     end
   end
@@ -22,6 +22,6 @@ class ComponentJsGenerator < Rails::Generators::Base
   protected
 
   def component_path
-    "app/javascript/components/#{component_name}"
+    "app/javascript/src/components/#{component_name}"
   end
 end

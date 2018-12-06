@@ -1,21 +1,21 @@
 version: '3'
 services:
-  ultramar-ops-db:
+  resit-boilerplate-app-db:
     image: postgres:10.1-alpine
     environment:
-      POSTGRES_DB: ultramar_ops_production
-      POSTGRES_USER: ultramar_ops_user
-      POSTGRES_PASSWORD: ai6ab76378936be9786876978a6d978s6ds867s86d87as6d876sgd7
+      POSTGRES_DB: db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
     volumes:
       -  /opt/backup:/var/lib/postgresql/data
     
-  ultramar-ops-web:
+  resit-boilerplate-app-web:
     build: .
     command: /bin/sh init.sh
     ports:
       - "3000:3000"
     depends_on:
-      - ultramar-ops-db
+      - resit-boilerplate-app-db
   redis:
     image: 'redis'
     command: redis-server --port 6379 --appendonly yes
@@ -29,4 +29,4 @@ services:
       - redis
     command: bundle exec sidekiq -C config/sidekiq.yml -e production
 volumes:
-  ultramar-ops-db:
+  resit-boilerplate-app-db:

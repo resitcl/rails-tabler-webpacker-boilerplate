@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   respond_to :html, :json
 
-  prepend_view_path Rails.root.join('app/javascript/')
+  prepend_view_path Rails.root.join('app/javascript/src/')
 
   def forbidden
     respond_to do |format|

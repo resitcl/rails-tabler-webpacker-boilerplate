@@ -3,22 +3,23 @@ default: &default
   encoding: unicode
   timeout: 5000
   username: postgres
-  password: postgres
-  port: 5432
-  host: localhost
+  username: postgres
+  password: 1234
+  host: 172.17.0.1
+  port: 5437
 
 development:
   <<: *default
-  database: ultramar_ops_dev
+  database: resit_boilerplate_dev
 
 test:
   <<: *default
-  database: ultramar_ops_test
+  database: resit_boilerplate_test
 
 production:
   adapter: postgresql
-  database: ultramar_ops_production
+  database: resit_boilerplate_production
   pool: 5
-  host: ultramar-ops-db
-  username: ultramar_ops_user
-  password: ai6ab76378936be9786876978a6d978s6ds867s86d87as6d876sgd7
+  host: resit_boilerplate_app-db
+  username: resit_boilerplate_user
+  password: password
