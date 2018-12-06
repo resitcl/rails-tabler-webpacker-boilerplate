@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'boilerplate_rails@resit.cl'
+  default from: 'ultramar_ops@resit.cl'
   layout 'mailer'
 end

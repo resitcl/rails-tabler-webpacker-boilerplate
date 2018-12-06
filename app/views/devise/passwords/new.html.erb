@@ -1,7 +1,7 @@
 <div class="body-container col-xs-12">
   <div class="form-container container">
     <div class="form col-xs-10 col-xs-offset-1 offset-md-3 col-md-6 col-lg-4 offset-lg-4 ">
-      <%= image_pack_tag 'src/images/logo-banner.png' %>
+      <%= image_pack_tag 'assets/images/logo-banner.png' %>
       <div class="login-lead">Recuperar contraseña</div>
       <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
         <%= devise_error_messages! %>
