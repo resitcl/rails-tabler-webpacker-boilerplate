@@ -36,7 +36,7 @@ Implementa dos _scaffold_ en la carpeta `lib`. Se utilizan igual que el _scaffol
 ### Comandos que correr
 - `bundle exec rake secret` y reemplazar los _hash_ en `secrets.yml`
 - `rake db:create && rake db:seed`
-- `npm install`
+- `yarn install`
 - `./bin/webpack-dev-server`: para refrescamiento automático
 
 ### English

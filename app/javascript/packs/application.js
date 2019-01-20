@@ -7,14 +7,11 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-import Rails from 'rails-ujs';
-import Turbolinks from 'turbolinks';
-import 'bootstrap/dist/js/bootstrap';
+require("rails-ujs").start();
+require("turbolinks").start();
 
-import '../src/stylesheets';
-import '../src/images';
-import '../src/components';
+require("bootstrap/dist/js/bootstrap");
 
-
-Rails.start();
-Turbolinks.start();
+require("../src/stylesheets");
+require("../src/images");
+require("../src/components");
