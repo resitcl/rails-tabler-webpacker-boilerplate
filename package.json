@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "https://github.com/rails/webpacker",
-    "bootstrap": "4.1.2",
+    "bootstrap": ">=4.3.1",
     "datatables.net": "^1.10.19",
     "datatables.net-bs4": "^1.10.19",
     "datatables.net-select": "^1.2.7",
