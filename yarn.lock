@@ -2286,10 +2286,18 @@ datatables.net-select-bs4@^1.2.7:
     datatables.net-select "1.2.7"
     jquery ">=1.7"
 
-datatables.net-select@1.2.7, datatables.net-select@^1.2.7:
+datatables.net-select@1.2.7:
   version "1.2.7"
   resolved "https://registry.yarnpkg.com/datatables.net-select/-/datatables.net-select-1.2.7.tgz#7d5badfca49c438f8b51df04483d8d77857e917c"
   integrity sha512-C3XDi7wpruGjDXV36dc9hN/FrAX9GOFvBZ7+KfKJTBNkGFbbhdzHS91SMeGiwRXPYivAyxfPTcVVndVaO83uBQ==
+  dependencies:
+    datatables.net "^1.10.15"
+    jquery ">=1.7"
+
+datatables.net-select@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/datatables.net-select/-/datatables.net-select-1.3.0.tgz#0815efa54f09eed744af80fe6a19e236070e8cda"
+  integrity sha512-sj72BM+Sx2n9mTHQjPiGMrGUoAVA1PCGmD+vEuAedhlDX1PAHcnqsOnG37eWrpqIsOQR/ZcSuE8IkU7gmiQkew==
   dependencies:
     datatables.net "^1.10.15"
     jquery ">=1.7"
