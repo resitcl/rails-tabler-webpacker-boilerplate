@@ -13,7 +13,7 @@
     "normalize.css": "^8.0.0",
     "popper.js": "^1.14.4",
     "rails-ujs": "^5.2.1",
-    "select2": "^4.0.6-rc.1",
+    "select2": "^4.0.8",
     "tabler-ui": "^0.0.32",
     "turbolinks": "^5.2.0"
   },
