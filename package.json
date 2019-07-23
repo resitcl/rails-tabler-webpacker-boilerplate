@@ -14,7 +14,7 @@
     "popper.js": "^1.14.4",
     "rails-ujs": "^5.2.1",
     "select2": "^4.0.8",
-    "tabler-ui": "^0.0.32",
+    "tabler-ui": "^0.0.34",
     "turbolinks": "^5.2.0"
   },
   "devDependencies": {
