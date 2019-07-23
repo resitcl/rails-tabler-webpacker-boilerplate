@@ -12,7 +12,7 @@
     "jquery-ui": "^1.12.1",
     "normalize.css": "^8.0.0",
     "popper.js": "^1.15.0",
-    "rails-ujs": "^5.2.1",
+    "rails-ujs": "^5.2.3",
     "select2": "^4.0.8",
     "tabler-ui": "^0.0.32",
     "turbolinks": "^5.2.0"
